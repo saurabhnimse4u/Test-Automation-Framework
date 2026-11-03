@@ -1,0 +1,20 @@
+{
+	"environment":{
+		"QA":{
+			"URL":"https://automationpractice.techwithjatin.com/",
+			"Header": "POST"
+		},
+		"DEV":{
+			"URL":"https://Dev.automationpractice.techwithjatin.com/",
+			"Header": "PUT"
+		},
+		"PROD":{
+			"URL":"https://Prod.automationpractice.techwithjatin.com/",
+			"Header": "POST"
+		}
+		
+		
+	}
+	
+	
+}
