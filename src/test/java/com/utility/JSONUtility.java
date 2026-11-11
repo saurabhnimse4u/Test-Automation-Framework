@@ -13,7 +13,7 @@ public class JSONUtility {
 	public static String getURL() throws FileNotFoundException {
 		
 		Gson gson = new Gson();
-		File filePath = new File(System.getProperty("user.dir")+ "\\config\\config.json");
+		File filePath = new File(System.getProperty("user.dir")+ "//config//config.json");
 		FileReader fileRead = new FileReader(filePath);
 		Config config = gson.fromJson(fileRead, Config.class);
 		Environment environment = config.getEnvironment().get("QA");

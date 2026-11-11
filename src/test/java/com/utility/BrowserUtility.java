@@ -151,7 +151,7 @@ public abstract class BrowserUtility {
 		Date date = new Date();
 		SimpleDateFormat format = new SimpleDateFormat("HH-mm-ss");
 		String currentTime = format.format(date);
-		path = System.getProperty("user.dir") + "//screenshots//" + name + "-" + currentTime + ".png";
+		path =  "./screenshots/" + name + "-" + currentTime + ".png";
 		File screenshotFile = new File(path);
 		try {
 			FileUtils.copyFile(screenshotData, screenshotFile);

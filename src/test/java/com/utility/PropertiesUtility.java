@@ -11,7 +11,7 @@ public class PropertiesUtility {
 
 	public static String ReadProperties(Env env, String propertyName) {
 
-		File filePath = new File(System.getProperty("user.dir") + "\\config\\QA.properties");
+		File filePath = new File(System.getProperty("user.dir") + "//config//QA.properties");
 		System.out.println(filePath);
 		FileReader fileReader = null;
 		Properties prop = new Properties();
