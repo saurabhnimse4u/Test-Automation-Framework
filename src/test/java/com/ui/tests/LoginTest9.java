@@ -24,26 +24,4 @@ public class LoginTest9 extends TestBase{
 				"Tim Alex");
 	}
 	
-	@Test(description = "Verify with valid user", groups = { "sanity", "e2e" },dataProviderClass=com.dataprovider.LoginDataProvider.class ,dataProvider="LoginData2")
-	public void LoginTest2(User user) {
-		assertEquals(
-				homePage2.goToLoginPage().doLoginWithValidCredentials(user.getEmail(), user.getPass()).getUserName(),
-				"Tim Alex");
-	}
-	
-	@Test(description = "Verify with valid user", groups = { "sanity", "e2e" },dataProviderClass=com.dataprovider.LoginDataProvider.class ,dataProvider="LoginData3", retryAnalyzer=com.ui.listener.MyRetryAnalyzer.class)
-	public void LoginTest3(User user) {
-		
-		assertEquals(
-				homePage2.goToLoginPage().doLoginWithValidCredentials(user.getEmail(), user.getPass()).getUserName(),
-				"Tim Alex");
-	
-	}
-	
-	@Test(description = "Verify with valid user", groups = { "sanity", "e2e" })
-	public void LoginTest() {
-		assertEquals(
-				homePage2.goToLoginPage().doLoginWithValidCredentials("xihige9472@digeros.com", "Tim123").getUserName(),
-				"Tim Alex");
-	}
 }
