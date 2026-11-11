@@ -1,0 +1,43 @@
+name: Java CI with Maven
+
+on:
+  schedule:
+   - cron: 00 20 * * *
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 21
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+        cache: maven
+    - name: Running Test Automation Framework
+      run: mvn test -X -Dbrowser=chrome -DisHeadless=true
+    
+    - name: Upload a Test logs
+      if: always()
+      uses: actions/upload-artifact@v7.0.2
+      with:
+       name: Test logs
+       path: logs/
+       
+    - name: Upload a Test reports
+      if: always()
+      uses: actions/upload-artifact@v7.0.2
+      with:
+       name: Test reports
+       path: report.html/
+    
+    - name: Upload a Test reports
+      run: echo "Test Execution Completed"
+    
