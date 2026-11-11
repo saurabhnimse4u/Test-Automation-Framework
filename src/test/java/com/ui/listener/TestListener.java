@@ -63,7 +63,7 @@ public class TestListener implements ITestListener {
 //		  report = new ExtentReports();
 //		  report.attachReporter(spark);
 
-		ExtentReportUtility.setUpExtentSparkReports("a.html");
+		ExtentReportUtility.setUpExtentSparkReports("report.html");
 	}
 
 	public void onFinish(ITestContext context) {
