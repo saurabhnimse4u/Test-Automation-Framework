@@ -30,7 +30,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: Test-logs
+          name: Test logs
           path: logs/
           if-no-files-found: warn
 
@@ -38,9 +38,8 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: Test-reports
+          name: Test reports
           path: report.html
-          if-no-files-found: warn
 
       - name: Execution Completed
         if: always()
