@@ -7,7 +7,7 @@ public class LoginTest5 {
 
 	public static void main(String[] args) {
 
-		HomePage homePage = new HomePage(CHROME);
+		HomePage homePage = new HomePage(CHROME,true);
 		String name = homePage.goToLoginPage()
 				              .doLoginWithValidCredentials("xihige9472@digeros.com","Tim123")
 				              .getUserName();

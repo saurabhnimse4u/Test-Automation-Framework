@@ -5,6 +5,31 @@
 	<groupId>AutomationFramework</groupId>
 	<artifactId>AutomationFramework_01</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+		<maven.compiler.release>21</maven.compiler.release>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.13.0</version>
+				<configuration>
+					<suitXmlFiles>
+						<suitXmlFile>testng.xml</suitXmlFile>
+					</suitXmlFiles>
+					<systemPropertyVariables>
+						<browser>${browser}</browser>
+						<isHeadless>${isHeadless}</isHeadless>
+						<isLambdaTest>${isLambdaTest}</isLambdaTest>
+					</systemPropertyVariables>
+					<source>21</source>
+					<target>21</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -49,11 +74,11 @@
 			<version>2.26.1</version>
 			<scope>compile</scope>
 		</dependency>
-		
+
 		<dependency>
-    <groupId>com.aventstack</groupId>
-    <artifactId>extentreports</artifactId>
-    <version>5.1.2</version>
-</dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.1.2</version>
+		</dependency>
 	</dependencies>
 </project>

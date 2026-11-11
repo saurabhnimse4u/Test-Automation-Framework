@@ -12,7 +12,6 @@ public class LoginPage extends BrowserUtility {
 
 	public LoginPage(WebDriver driver) {
 		super(driver); // Super is used to call the Parent class constructor
-
 	}
 
 	public MyAccountPage doLoginWithValidCredentials(String username, String password) {

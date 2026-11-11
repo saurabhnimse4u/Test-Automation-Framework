@@ -17,9 +17,8 @@ public final class HomePage extends BrowserUtility{  // We extends BrowserUtitli
 	
 	private static final By SIGN_IN_LOCATOR = By.className("login");
 	Logger log = LoggerUtility.getLogger(getClass());
-	public HomePage(Browser browser) {
-		
-		super(browser);      // Super is used to call the Parent class constructor
+	public HomePage(Browser browser,boolean isHeadless) {	
+		super(browser,isHeadless);      // Super is used to call the Parent class constructor
 		maximizeWindow();
 		goTo(ReadProperties(QA, "URL"));
 	}

@@ -1,5 +1,8 @@
 <suite name="Automation Framework Practice" parallel="methods" thread-count="3">
 	<test name="UI Automation ">
+		<parameter name="browser" value="${browser}" />
+		<parameter name="isHeadless" value="${isHeadless}" />
+		<parameter name="isLambdaTest" value="${isLambdaTest}" />
 		<classes>
 			<class name="com.ui.tests.LoginTest8"> </class>
 		</classes>
