@@ -144,14 +144,13 @@ public abstract class BrowserUtility {
 	}
 
 	String path;
-
 	public String takeScreenShots(String name) {
 		TakesScreenshot screenshot = (TakesScreenshot) driver.get();
 		File screenshotData = screenshot.getScreenshotAs(OutputType.FILE);
 		Date date = new Date();
 		SimpleDateFormat format = new SimpleDateFormat("HH-mm-ss");
 		String currentTime = format.format(date);
-		path =  "./screenshots/" + name + "-" + currentTime + ".png";
+		path = "./screenshots/" + name + "-" + currentTime + ".png";
 		File screenshotFile = new File(path);
 		try {
 			FileUtils.copyFile(screenshotData, screenshotFile);

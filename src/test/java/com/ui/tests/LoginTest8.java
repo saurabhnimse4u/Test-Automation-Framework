@@ -16,12 +16,10 @@ import com.utility.LoggerUtility;
 public class LoginTest8 extends TestBase{
 
 	//HomePage2 homePage2;
-
+// Using JSON
 	@Test(description = "Verify with valid user", groups = { "sanity", "e2e" },dataProviderClass=com.dataprovider.LoginDataProvider.class ,dataProvider="LoginData")
 	public void LoginTest(User user) {
-		assertEquals(
-				homePage2.goToLoginPage().doLoginWithValidCredentials(user.getEmail(), user.getPass()).getUserName(),
-				"Tim Alex");
+		assertEquals(homePage2.goToLoginPage().doLoginWithValidCredentials(user.getEmail(), user.getPass()).getUserName(),"Tim Alex");
 	}
 	
 	@Test(description = "Verify with valid user", groups = { "sanity", "e2e" },dataProviderClass=com.dataprovider.LoginDataProvider.class ,dataProvider="LoginData2")

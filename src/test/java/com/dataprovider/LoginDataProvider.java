@@ -16,6 +16,9 @@ import com.utility.CSVDataProviderUtitlity;
 import com.utility.ExcelDataProviderUtility;
 
 public class LoginDataProvider {
+	
+	// JSON using gson lab
+	
 	@DataProvider(name="LoginData")
 	public Iterator<Object[]> loginData() throws FileNotFoundException {
 		Gson gson = new Gson();
@@ -30,11 +33,12 @@ public class LoginDataProvider {
 		return dataReturn.iterator();
 	}
 
+	// CSV using openCSV
 	@DataProvider(name="LoginData2")
 	public Iterator<User> loginData2(){
 		return CSVDataProviderUtitlity.LoginTestDataCSV();	 
 	}
-	
+	// xlsx using Apache POI
 	@DataProvider(name="LoginData3")
 	public Iterator<User> loginData3(){
 		return ExcelDataProviderUtility.readExcelFile();	 

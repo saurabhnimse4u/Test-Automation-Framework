@@ -13,6 +13,8 @@ import com.utility.BrowserUtility;
 import com.utility.LoggerUtility;
 
 public class TestBase {
+	
+	
 	protected HomePage2 homePage2;
 	Logger log = LoggerUtility.getLogger(getClass());
 	private boolean isLambdaTest;
