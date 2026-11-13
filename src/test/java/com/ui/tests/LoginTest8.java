@@ -17,13 +17,13 @@ public class LoginTest8 extends TestBase{
 
 	//HomePage2 homePage2;
 // Using JSON
-	@Test(description = "Verify with valid user", groups = { "sanity", "e2e" },dataProviderClass=com.dataprovider.LoginDataProvider.class ,dataProvider="LoginData")
+	@Test(description = "Verify with valid user", groups = { "sanity"},dataProviderClass=com.dataprovider.LoginDataProvider.class ,dataProvider="LoginData")
 	public void LoginTest(User user) {
 		homePage2.goToLoginPage().doLoginWithValidCredentials(user.getEmail(), user.getPass()).getUserName();
 	}
 	
 // Using CSV	
-	@Test(description = "Verify with valid user", groups = { "sanity", "e2e" },dataProviderClass=com.dataprovider.LoginDataProvider.class ,dataProvider="LoginData2")
+	@Test(description = "Verify with valid user", groups = { "sanity"},dataProviderClass=com.dataprovider.LoginDataProvider.class ,dataProvider="LoginData2")
 	public void LoginTest2(User user) {
 		assertEquals(
 				homePage2.goToLoginPage().doLoginWithValidCredentials(user.getEmail(), user.getPass()).getUserName(),
@@ -31,7 +31,7 @@ public class LoginTest8 extends TestBase{
 	}
 	
 // Using Excel	
-	@Test(description = "Verify with valid user", groups = { "sanity", "e2e" },dataProviderClass=com.dataprovider.LoginDataProvider.class ,dataProvider="LoginData3", retryAnalyzer=com.ui.listener.MyRetryAnalyzer.class)
+	@Test(description = "Verify with valid user", groups = { "sanity"},dataProviderClass=com.dataprovider.LoginDataProvider.class ,dataProvider="LoginData3", retryAnalyzer=com.ui.listener.MyRetryAnalyzer.class)
 	public void LoginTest3(User user) {
 		
 		assertEquals(
@@ -41,10 +41,10 @@ public class LoginTest8 extends TestBase{
 	}
 	
 // Normal	
-	@Test(description = "Verify with valid user", groups = { "sanity", "e2e" })
+	@Test(description = "Verify with valid user", groups = { "sanity" })
 	public void LoginTest() {
 		assertEquals(
-				homePage2.goToLoginPage().doLoginWithValidCredentials("xihige9472@digeros.com", "Tim18823").getUserName(),
+				homePage2.goToLoginPage().doLoginWithValidCredentials("xihige9472@digeros.com", "Tim123").getUserName(),
 				"Tim Alex");
 	}
 }
