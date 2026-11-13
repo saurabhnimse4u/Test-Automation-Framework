@@ -32,7 +32,7 @@ public class CSVDataProviderUtitlity {
 			
 			
 			while((line= csvRead.readNext())!=null) {
-			userData= new User(line[0],line[1]);
+			userData= new User(line[0],line[1], line[2]);
 			userList.add(userData);
 			}			
 		} catch (Exception e) {

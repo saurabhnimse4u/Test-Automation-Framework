@@ -159,8 +159,8 @@ public abstract class BrowserUtility {
 		}
 		return path;
 	}
-
-	@AfterMethod(alwaysRun = true)
+	
+	
 	public void tearDown() {
 		if (driver != null) {
 			driver.get().quit();

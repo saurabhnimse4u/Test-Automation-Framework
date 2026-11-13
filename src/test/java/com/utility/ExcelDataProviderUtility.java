@@ -21,6 +21,7 @@ public class ExcelDataProviderUtility {
         Row row;
         Cell emailAddressCell;
         Cell passwordCell;
+        Cell usernameCell;
         User user;
         List<User> userList= null;
         Iterator<Row> rowIterator;
@@ -36,7 +37,8 @@ public class ExcelDataProviderUtility {
         		row = rowIterator.next();
         		emailAddressCell = row.getCell(0);
         		passwordCell = row.getCell(1);
-        		user= new User(emailAddressCell.toString(),passwordCell.toString());
+        		usernameCell = row.getCell(2);
+        		user= new User(emailAddressCell.toString(),passwordCell.toString(),usernameCell.toString());
         		userList.add(user);
         		wb.close();
         	}     	
