@@ -9,6 +9,7 @@ public class MyAccountPage extends BrowserUtility {
 
 	
 	private static final By USER_NAME = By.xpath("//a[@title='View my customer account']/span");
+	private static final By SEARCH_BOX = By.id("search_query_top");
 			public MyAccountPage(WebDriver driver) {
 				super(driver); // Super is used to call the Parent class constructor
 
@@ -18,4 +19,8 @@ public class MyAccountPage extends BrowserUtility {
 				return getVisibleText(USER_NAME);	
 			}
 
+			
+			public void enterProduct(String searchProduct) {
+				
+			}
 }

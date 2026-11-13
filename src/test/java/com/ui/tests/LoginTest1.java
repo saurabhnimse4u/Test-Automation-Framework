@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class LoginTest {
+public class LoginTest1 {
 	
 	private static WebDriver  driver;
 
@@ -25,6 +25,8 @@ public class LoginTest {
 		
 		WebElement password = driver.findElement(By.id("passwd"));
 		password.sendKeys("Tim123");
+		
+		driver.close();
 
 	}
 
