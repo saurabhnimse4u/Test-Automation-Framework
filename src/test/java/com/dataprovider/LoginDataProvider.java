@@ -14,23 +14,15 @@ import com.ui.pojo.TestData;
 import com.ui.pojo.User;
 import com.utility.CSVDataProviderUtitlity;
 import com.utility.ExcelDataProviderUtility;
+import com.utility.JSONUtility2;
 
 public class LoginDataProvider {
 	
 	// JSON using gson lab
 	
 	@DataProvider(name="LoginData")
-	public Iterator<Object[]> loginData() throws FileNotFoundException {
-		Gson gson = new Gson();
-		File filePath = new File(System.getProperty("user.dir")+"//testdata//LoginTestData1.json");
-		FileReader fileReader = new FileReader(filePath);
-		TestData data = gson.fromJson(fileReader, TestData.class);
-		
-		List<Object[]> dataReturn = new ArrayList<Object[]>(); 
-		for(User user:data.getData()) {
-			dataReturn.add(new Object[] {user});
-		}
-		return dataReturn.iterator();
+	public Iterator<Object[]> loginData() throws FileNotFoundException {		
+		return JSONUtility2.readJsonData();
 	}
 
 	// CSV using openCSV

@@ -1,6 +1,8 @@
 package com.ui.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
 //import org.openqa.selenium.WebDriver;
 import static com.constant.Env.*;
 
@@ -27,6 +29,10 @@ public final class HomePage2 extends BrowserUtility{  // We extends BrowserUtitl
 		}
 	}
 	
+	public HomePage2(WebDriver lambdadriver) {
+		super(lambdadriver);
+	}
+
 	public LoginPage goToLoginPage() { // do  not use void return type when method is related to pages 
 		clickOn(SIGN_IN_LOCATOR);
 		LoginPage lp = new LoginPage(getDriver());

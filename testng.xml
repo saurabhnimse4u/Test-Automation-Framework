@@ -4,8 +4,8 @@
 		<parameter name="isHeadless" value="${isHeadless}" />
 		<parameter name="isLambdaTest" value="${isLambdaTest}" />
 		<classes>
-			<class name="com.ui.tests.LoginTest8">
-			</class>
+			<class name="com.ui.tests.LoginTest8"></class>
+			<class name="com.ui.tests.SearchProductTest"></class>
 		</classes>
 	</test>
 </suite>

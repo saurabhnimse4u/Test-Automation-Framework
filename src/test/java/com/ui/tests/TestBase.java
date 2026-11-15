@@ -11,6 +11,7 @@ import org.testng.annotations.Parameters;
 import com.constant.Browser;
 import com.ui.pages.HomePage2;
 import com.utility.BrowserUtility;
+import com.utility.LambdaTestUtility;
 import com.utility.LoggerUtility;
 
 public class TestBase {
@@ -28,17 +29,20 @@ public class TestBase {
 		this.isLambdaTest = isLambdaTest;
 		WebDriver lambdadriver;
 		if(isLambdaTest) {
-			// lambdadriver =	LambdaTestUtility.initializeLambdaTestSession("chrome", result.getMethod().getMethodName());
-			// homePage2 = new HomePage2(lambdadriver);
+			 lambdadriver =	LambdaTestUtility.initializeLambdaTestSession("chrome", result.getMethod().getMethodName());
+			 homePage2 = new HomePage2(lambdadriver);
 		}
 		else {
 		log.info("Load Home Page ");
 		homePage2 = new HomePage2(Browser.CHROME, isHeadless);
 		}
 	}
+	
+	
 	public BrowserUtility getInstance() {
 		return homePage2;
 	}
+	
 	
 	@AfterMethod(alwaysRun = true)
 	public void quitAllTabs() {
