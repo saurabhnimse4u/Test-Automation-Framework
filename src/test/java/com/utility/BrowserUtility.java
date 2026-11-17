@@ -140,14 +140,14 @@ public abstract class BrowserUtility {
 	}
 
 	public void clickOn(By locator) {
-	  //  WebElement element = driver.get().findElement(locator);
-		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
+	    WebElement element = driver.get().findElement(locator);
+		//WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
 		element.click();
 	}
 	
 	public void clickOnCheckbox(By locator) {
-	//WebElement element = driver.get().findElement(locator);
-		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	WebElement element = driver.get().findElement(locator);
+	//	WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		element.click();
 	}
 
