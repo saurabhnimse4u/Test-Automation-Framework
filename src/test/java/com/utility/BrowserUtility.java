@@ -140,7 +140,7 @@ public abstract class BrowserUtility {
 	}
 
 	public void clickOn(By locator) {
-	//WebElement element = driver.get().findElement(locator);
+	  //  WebElement element = driver.get().findElement(locator);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
 		element.click();
 	}
