@@ -5,6 +5,10 @@
 		<parameter name="isLambdaTest" value="${isLambdaTest}" />
 		<classes>
 			<class name="com.ui.tests.LoginTest8"></class>
+			<class name="com.ui.tests.LoginInvalidCredentials"></class>
+			<class name="com.ui.tests.AddingAddressTest"></class>
+			<class name="com.ui.tests.AddingAddressTest"></class>
+			<class name="com.ui.tests.ProductCheckoutTest"></class>
 			<class name="com.ui.tests.SearchProductTest"></class>
 		</classes>
 	</test>
