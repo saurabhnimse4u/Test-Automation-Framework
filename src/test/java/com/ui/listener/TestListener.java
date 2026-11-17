@@ -6,12 +6,7 @@ import org.apache.logging.log4j.Logger;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.Writable;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import static com.aventstack.extentreports.Status.*;
 import com.ui.tests.TestBase;
 import com.utility.BrowserUtility;
 import com.utility.ExtentReportUtility;
@@ -29,13 +24,13 @@ public class TestListener implements ITestListener {
 		log.info(Arrays.toString(result.getMethod().getGroups()));
 //	    testReport = report.createTest(result.getMethod().getMethodName());
 		ExtentReportUtility.createExtentTest(result.getMethod().getMethodName() +" Start reporting");
-		ExtentReportUtility.getTest().log(Status.INFO, " Launching application");
+		ExtentReportUtility.getTest().log(INFO, " Launching application");
 	}
 
 	public void onTestSuccess(ITestResult result) {
 		log.info(result.getMethod().getMethodName() + "  PASSED");
 //		  testReport.log(Status.PASS, result.getMethod().getMethodName());
-		ExtentReportUtility.getTest().log(Status.PASS, result.getMethod().getMethodName());
+		ExtentReportUtility.getTest().log(PASS, result.getMethod().getMethodName());
 
 	}
 
@@ -43,8 +38,7 @@ public class TestListener implements ITestListener {
 		log.error(result.getMethod().getMethodName() + " FAILED");
 		log.error(result.getThrowable().getMessage());
 //		  testReport.log(Status.FAIL, result.getMethod().getMethodName());
-		ExtentReportUtility.getTest().log(Status.FAIL, result.getMethod().getMethodName());
-		
+		ExtentReportUtility.getTest().log(FAIL, result.getMethod().getMethodName());	
 		Object testClass = result.getInstance();
 		BrowserUtility browserUtiltiy = ((TestBase) testClass).getInstance();
 		log.info("Capture screen shot on failure");
@@ -55,7 +49,7 @@ public class TestListener implements ITestListener {
 	public void onTestSkipped(ITestResult result) {
 		log.info(result.getMethod().getMethodName() + "  SKIPPED");
 //		  testReport.log(Status.SKIP, result.getMethod().getMethodName());
-		ExtentReportUtility.getTest().log(Status.SKIP, result.getMethod().getMethodName());
+		ExtentReportUtility.getTest().log(SKIP, result.getMethod().getMethodName());
 	}
 
 	public void onStart(ITestContext context) {

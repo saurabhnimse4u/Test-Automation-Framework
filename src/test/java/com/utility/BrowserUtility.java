@@ -171,7 +171,7 @@ public abstract class BrowserUtility {
 
 	public String getVisibleText(By locator) {
 		log.info("To get visible text from the: " + locator);
-		WebElement element = driver.get().findElement(locator);
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		return element.getText();
 	}
 
