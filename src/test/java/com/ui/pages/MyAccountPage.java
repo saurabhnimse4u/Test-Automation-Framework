@@ -11,6 +11,7 @@ public class MyAccountPage extends BrowserUtility {
 	
 	private static final By USER_NAME = By.xpath("//a[@title='View my customer account']/span");
 	private static final By SEARCH_BOX = By.id("search_query_top");
+	private static final By ADD_NEW_ADDRESS = By.xpath("//a[@title='Add my first address']");
 			
 	
  	public MyAccountPage(WebDriver driver) {
@@ -27,4 +28,12 @@ public class MyAccountPage extends BrowserUtility {
 				SearchResultPage sp = new SearchResultPage(getDriver());
 				return sp;
 			}
+			
+			public AddressPage goToAddressPage() {
+				
+				clickOn(ADD_NEW_ADDRESS);
+			
+				return new AddressPage(getDriver());
+			}
 }
+

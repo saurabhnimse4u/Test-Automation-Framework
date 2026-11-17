@@ -29,6 +29,7 @@ public class TestListener implements ITestListener {
 		log.info(Arrays.toString(result.getMethod().getGroups()));
 //	    testReport = report.createTest(result.getMethod().getMethodName());
 		ExtentReportUtility.createExtentTest(result.getMethod().getMethodName());
+		ExtentReportUtility.getTest().log(Status.INFO, "Launching application");
 	}
 
 	public void onTestSuccess(ITestResult result) {
