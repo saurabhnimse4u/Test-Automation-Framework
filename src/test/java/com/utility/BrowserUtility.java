@@ -162,7 +162,7 @@ public abstract class BrowserUtility {
 	}
 
 	public void enterSpecialKey(By locator, Keys keyToEnter) {
-		log.error("Enter the key: " + locator);
+		log.info("Enter the key: " + locator);
 	//	wait.until(ExpectedConditions.)
 		WebElement element = driver.get().findElement(locator);
 		log.info("Element found and now enter special key" + keyToEnter);

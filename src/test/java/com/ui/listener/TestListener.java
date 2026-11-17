@@ -24,23 +24,23 @@ public class TestListener implements ITestListener {
 //	ExtentTest testReport; // store info about test inside all extent test info
 
 	public void onTestStart(ITestResult result) {
-		log.info(result.getMethod().getMethodName());
+		log.info(result.getMethod().getMethodName()+ "  Execution Started");
 		log.info(result.getMethod().getDescription());
 		log.info(Arrays.toString(result.getMethod().getGroups()));
 //	    testReport = report.createTest(result.getMethod().getMethodName());
-		ExtentReportUtility.createExtentTest(result.getMethod().getMethodName());
-		ExtentReportUtility.getTest().log(Status.INFO, "Launching application");
+		ExtentReportUtility.createExtentTest(result.getMethod().getMethodName() +" Start reporting");
+		ExtentReportUtility.getTest().log(Status.INFO, " Launching application");
 	}
 
 	public void onTestSuccess(ITestResult result) {
-		log.info(result.getMethod().getMethodName() + "PASSED");
+		log.info(result.getMethod().getMethodName() + "  PASSED");
 //		  testReport.log(Status.PASS, result.getMethod().getMethodName());
 		ExtentReportUtility.getTest().log(Status.PASS, result.getMethod().getMethodName());
 
 	}
 
 	public void onTestFailure(ITestResult result) {
-		log.error(result.getMethod().getMethodName() + "FAILED");
+		log.error(result.getMethod().getMethodName() + " FAILED");
 		log.error(result.getThrowable().getMessage());
 //		  testReport.log(Status.FAIL, result.getMethod().getMethodName());
 		ExtentReportUtility.getTest().log(Status.FAIL, result.getMethod().getMethodName());
@@ -53,7 +53,7 @@ public class TestListener implements ITestListener {
 	}
 
 	public void onTestSkipped(ITestResult result) {
-		log.info(result.getMethod().getMethodName() + "SKIPPED");
+		log.info(result.getMethod().getMethodName() + "  SKIPPED");
 //		  testReport.log(Status.SKIP, result.getMethod().getMethodName());
 		ExtentReportUtility.getTest().log(Status.SKIP, result.getMethod().getMethodName());
 	}
